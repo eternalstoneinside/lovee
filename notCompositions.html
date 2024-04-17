@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Not find composition?</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240418013759">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container header__container_notfind">
+				<a href="index.html" class="header__logo"><img src="img/header/logo.svg" alt="logo"></a>
+
+			</div>
+		</header>
+		<main class="page">
+			<section class="notfind">
+				<div class="notfind__container">
+					<div class="notfind__header">
+						<h1 class="notfind__title subtitle">Not find composition?</h1>
+						<h2 class="notfind__subtitle">If you did not find the composition you want, then send us the name of
+							the composition, the artist and the link on YouTube and other Social Media
+						</h2>
+					</div>
+					<div class="notfind__content">
+						<form action="" class="notfind__form">
+							<input required type="text" placeholder="Name" class="notfind__input notfind__input_name">
+							<input required type="text" placeholder="Link" class="notfind__input notfind__input_link">
+							<button type="submit" class="notfind__btn btn">Submit</button>
+						</form>
+					</div>
+					<div class="notfind__footer footer-back">
+						<a href="index.html" class="terms__button btn footer-back__btn">Back to main page</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__text">Lovvely © 2024</div>
+				<div class="footer__contacts contacts-footer">
+					<h3 class="contacts-footer__title">Contact us</h3>
+					<a href="mailto:lovvely@sachok.net" class="contacts-footer__mail">lovvely@sachok.net</a>
+					<div class="contacts-footer__links">
+						<a href="tel:777-777-77-77" class="contacts-footer__phone">777-777-77-77</a>
+						<div class="contacts-footer__social">
+							<a href="" class="contacts-footer__whatsapp">
+								<img src="img/footer/whatsapp.svg" alt="whatsapp">
+							</a>
+							<a href="" class="contacts-footer__telegram">
+								<img src="img/footer/telegram.svg" alt="tg">
+							</a>
+							<a href="" class="contacts-footer__message">
+								<img src="img/footer/message.svg" alt="message">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__follow follow-footer">
+					<h3 class="follow-footer__title">Follow us</h3>
+					<div class="follow-footer__links follow-links">
+						<a href="#" class="follow-links__tt">
+							<img src="img/footer/tiktok.svg" alt="tt">
+						</a>
+						<a href="#" class="follow-links__inst">
+							<img src="img/footer/instagram.svg" alt="inst">
+						</a>
+						<a href="#" class="follow-links__youtube">
+							<img src="img/footer/youtube.svg" alt="yt">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+		(g => {
+			var h, a, k, p = "The Google Maps JavaScript API",
+				c = "google",
+				l = "importLibrary",
+				q = "__ib__",
+				m = document,
+				b = window;
+			b = b[c] || (b[c] = {});
+			var d = b.maps || (b.maps = {}),
+				r = new Set,
+				e = new URLSearchParams,
+				u = () => h || (h = new Promise(async (f, n) => {
+					await (a = m.createElement("script"));
+					e.set("libraries", [...r, 'places'] + ""); // Додаємо 'places' до списку бібліотек
+					for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+					e.set("callback", c + ".maps." + q);
+					a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+					d[q] = f;
+					a.onerror = () => h = n(Error(p + " could not load."));
+					a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+					m.head.append(a)
+				}));
+			d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+		})({
+			key: "AIzaSyAzcahL_hdBtv-iRcklwGiOiaMnyVhdCOY",
+			// Add other bootstrap parameters as needed, using camel case.
+			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+		});
+	</script>
+	<script src="js/app.min.js?_v=20240418013759"></script>
+</body>
+
+</html>

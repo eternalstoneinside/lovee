@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Lovvely</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240418013759">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-scroll="160" data-scroll-show="1" class="header">
+			<div class="header__container">
+				<a href="index.html" class="header__logo"><img src="img/header/logo.svg" alt="logo"></a>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<div class="menu__logo logo-menu">
+							<a href="" class="logo-menu__link"><img src="img/header/logo-mobile.svg" alt="logo"></a>
+						</div>
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".flowers" class="menu__link">Flowers</a>
+							</li>
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".composition" class="menu__link">Composition</a></li>
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".services" class="menu__link">Add
+									Services</a></li>
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".data" class="menu__link">Your data</a>
+							</li>
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".calendar" class="menu__link">Calendar</a>
+							</li>
+							<li class="menu__item"><a href="#" data-goto-top="100" data-goto=".informations" class="menu__link">About
+									Services</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__cart">
+					<button type="button" data-popup="#popup" class="header__btn">
+						<img src="img/header/cart.svg" alt="cart">
+						<div class="header__quantity"></div>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="hero">
+				<!-- Оболонка слайдера -->
+				<div class="hero__slider swiper">
+					<!-- Частина слайдера, що рухається -->
+					<div class="hero__wrapper swiper-wrapper">
+						<!-- Слайд -->
+						<div class="hero__slide swiper-slide"> <picture><source srcset="img/hero/slider-01.webp" type="image/webp"><img src="img/hero/slider-01.png" alt="1"></picture></div>
+						<div class="hero__slide swiper-slide"> <picture><source srcset="img/hero/slider-01.webp" type="image/webp"><img src="img/hero/slider-01.png" alt="2"></picture></div>
+						<div class="hero__slide swiper-slide"> <picture><source srcset="img/hero/slider-01.webp" type="image/webp"><img src="img/hero/slider-01.png" alt="3"></picture></div>
+					</div>
+					<!-- Якщо потрібна пагінація -->
+					<div class="swiper-pagination"></div>
+					<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+					<button type="button" class="swiper-button swiper-button-prev"><img src="img/hero/arrow-left.svg" alt="arrow-left"></button>
+					<button type="button" class="swiper-button swiper-button-next"><img src="img/hero/arrow-right.svg" alt="arrow-right"></button></button>
+				</div>
+			</section>
+			<section class="flowers">
+				<div class="flowers__container">
+					<div class="flowers__header header-section">
+						<h2 class="flowers__title header-section__title subtitle">Flowers</h2>
+						<form action="#" id="searchForm" class="flowers__form header-section__form form-flowers">
+							<input id="searchInput" type="text" name="search" placeholder="Search" class="form-flowers__input header-section__input">
+							<button type="submit" class="form-flowers__button header-section__button">
+								<img src="img/flowers/search.svg" alt="search">
+							</button>
+						</form>
+						<a href="notFlowers.html" id="goBackFlowers" class="flowers__not header-section__not">Not find?</a>
+					</div>
+					<div id="searchResult"></div>
+					<div class="flowers__catalog">
+						<div class="flowers__item item-flower">
+							<div class="item-flower__img">
+								<picture><source srcset="img/flowers/flower01.webp" type="image/webp"><img src="img/flowers/flower01.png" alt="flower01"></picture>
+							</div>
+							<h3 class="item-flower__title">Burgundy blooms</h3>
+							<div class="item-flower__price">
+								<span class="item-flower__coin">$42.49</span>
+								<button type="button" id="addFlowerToCart" class="item-flower__btn">
+									<img src="img/flowers/addcart.svg" alt="add">
+								</button>
+							</div>
+						</div>
+						<div class="flowers__item item-flower">
+							<div class="item-flower__img">
+								<picture><source srcset="img/flowers/flower02.webp" type="image/webp"><img src="img/flowers/flower02.png" alt="flower02"></picture>
+							</div>
+							<h3 class="item-flower__title">Predy please</h3>
+							<div class="item-flower__price">
+								<span class="item-flower__coin">$33.99</span>
+								<button type="button" id="addFlowerToCart" class="item-flower__btn">
+									<img src="img/flowers/addcart.svg" alt="add">
+								</button>
+							</div>
+						</div>
+						<div class="flowers__item item-flower">
+							<div class="item-flower__img">
+								<picture><source srcset="img/flowers/flower03.webp" type="image/webp"><img src="img/flowers/flower03.png" alt="flower03"></picture>
+							</div>
+							<h3 class="item-flower__title">One doze</h3>
+							<div class="item-flower__price">
+								<span class="item-flower__coin">$34.99</span>
+								<button type="button" id="addFlowerToCart" class="item-flower__btn">
+									<img src="img/flowers/addcart.svg" alt="add">
+								</button>
+							</div>
+						</div>
+						<div class="flowers__item item-flower">
+							<div class="item-flower__img">
+								<picture><source srcset="img/flowers/flower04.webp" type="image/webp"><img src="img/flowers/flower04.png" alt="flower04"></picture>
+							</div>
+							<h3 class="item-flower__title">Rose</h3>
+							<div class="item-flower__price">
+								<span class="item-flower__coin">$38.24</span>
+								<button type="button" id="addFlowerToCart" class="item-flower__btn">
+									<img src="img/flowers/addcart.svg" alt="add">
+								</button>
+							</div>
+						</div>
+						<div data-showmore class="flowers__footer footer-section">
+							<div data-showmore-content="0" class="footer-section__content">
+								<div class="flowers__catalog">
+									<div class="flowers__item item-flower">
+										<div class="item-flower__img">
+											<picture><source srcset="img/flowers/flower01.webp" type="image/webp"><img src="img/flowers/flower01.png" alt="flower01"></picture>
+										</div>
+										<h3 class="item-flower__title">3223</h3>
+										<div class="item-flower__price">
+											<span class="item-flower__coin">$42.49</span>
+											<button type="button" id="addFlowerToCart" class="item-flower__btn">
+												<img src="img/flowers/addcart.svg" alt="add">
+											</button>
+										</div>
+									</div>
+									<div class="flowers__item item-flower">
+										<div class="item-flower__img">
+											<picture><source srcset="img/flowers/flower01.webp" type="image/webp"><img src="img/flowers/flower01.png" alt="flower01"></picture>
+										</div>
+										<h3 class="item-flower__title">3223</h3>
+										<div class="item-flower__price">
+											<span class="item-flower__coin">$42.49</span>
+											<button type="button" id="addFlowerToCart" class="item-flower__btn">
+												<img src="img/flowers/addcart.svg" alt="add">
+											</button>
+										</div>
+									</div>
+									<div class="flowers__item item-flower">
+										<div class="item-flower__img">
+											<picture><source srcset="img/flowers/flower01.webp" type="image/webp"><img src="img/flowers/flower01.png" alt="flower01"></picture>
+										</div>
+										<h3 class="item-flower__title">3223</h3>
+										<div class="item-flower__price">
+											<span class="item-flower__coin">$42.49</span>
+											<button type="button" id="addFlowerToCart" class="item-flower__btn">
+												<img src="img/flowers/addcart.svg" alt="add">
+											</button>
+										</div>
+									</div>
+									<div class="flowers__item item-flower">
+										<div class="item-flower__img">
+											<picture><source srcset="img/flowers/flower01.webp" type="image/webp"><img src="img/flowers/flower01.png" alt="flower01"></picture>
+										</div>
+										<h3 class="item-flower__title">3223</h3>
+										<div class="item-flower__price">
+											<span class="item-flower__coin">$42.49</span>
+											<button type="button" id="addFlowerToCart" class="item-flower__btn">
+												<img src="img/flowers/addcart.svg" alt="add">
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button hidden data-showmore-button type="button" class="footer-section__more">
+								<span>More</span>
+								<span>Less</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<section class="composition">
+				<div class="composition__container">
+					<div class="composition__header header-section">
+						<h2 class="composition__title header-section__title subtitle">Composition</h2>
+						<form action="#" id="compositionForm" class="flowers__form header-section__form form-flowers">
+							<input id="compositionInput" type="text" name="search" placeholder="Search" class="form-composition__input header-section__input">
+							<button type="submit" class="form-composition__button header-section__button">
+								<img src="img/flowers/search.svg" alt="search">
+							</button>
+						</form>
+						<a href="notCompositions.html" id="goBackCompositions" class="composition__not header-section__not">Not find?</a>
+					</div>
+					<div id="searchResultComposition"></div>
+					<div class="composition__catalog">
+						<div class="composition__item item-composition">
+							<div class="item-composition__image">
+								<picture><source srcset="img/composition/song01.webp" type="image/webp"><img src="img/composition/song01.png" alt="song01"></picture>
+							</div>
+							<div class="item-composition__content">
+								<div class="item-composition__info">
+									<h4 class="item-composition__performer">Frankie Valie</h4>
+									<div class="item-composition__name">Can’t Take My Eyes off You</div>
+									<div class="item-composition__by">
+										<p>by Sammy Silvas</p>
+										<div class="item-composition__links">
+											<a href="#" class="item-composition__link item-composition__link-youtube">
+												<img src="img/footer/youtube.svg" alt="yt">
+											</a>
+											<a href="#" class="item-composition__link item-composition__link-instagram">
+												<img src="img/footer/instagram.svg" alt="inst">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="item-composition__footer">
+									<a href="#" type="button" class="item-composition__btn btn">Play</a>
+									<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+										<img src="img/flowers/addcart.svg" alt="cart">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="composition__item item-composition">
+							<div class="item-composition__image">
+								<picture><source srcset="img/composition/song02.webp" type="image/webp"><img src="img/composition/song02.png" alt="song02"></picture>
+							</div>
+							<div class="item-composition__content">
+								<div class="item-composition__info">
+									<h4 class="item-composition__performer">Bruno Mars</h4>
+									<div class="item-composition__name">Just the Way You Are</div>
+									<div class="item-composition__by">
+										<p>by Sammy Silvas</p>
+										<div class="item-composition__links">
+											<a href="#" class="item-composition__link item-composition__link-youtube">
+												<img src="img/footer/youtube.svg" alt="yt">
+											</a>
+											<a href="#" class="item-composition__link item-composition__link-instagram">
+												<img src="img/footer/instagram.svg" alt="inst">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="item-composition__footer">
+									<a type="button" class="item-composition__btn btn">Play</a>
+									<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+										<img src="img/flowers/addcart.svg" alt="cart">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="composition__item item-composition">
+							<div class="item-composition__image">
+								<picture><source srcset="img/composition/song03.webp" type="image/webp"><img src="img/composition/song03.png" alt="song03"></picture>
+							</div>
+							<div class="item-composition__content">
+								<div class="item-composition__info">
+									<h4 class="item-composition__performer">Enrique Iglesias</h4>
+									<div class="item-composition__name">Bailando (Spanish Version)</div>
+									<div class="item-composition__by">
+										<p>by Sammy Silvas</p>
+										<div class="item-composition__links">
+											<a href="#" class="item-composition__link item-composition__link-youtube">
+												<img src="img/footer/youtube.svg" alt="yt">
+											</a>
+											<a href="#" class="item-composition__link item-composition__link-instagram">
+												<img src="img/footer/instagram.svg" alt="inst">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="item-composition__footer">
+									<a href="#" type="button" class="item-composition__btn btn">Play</a>
+									<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+										<img src="img/flowers/addcart.svg" alt="cart">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="composition__item item-composition">
+							<div class="item-composition__image">
+								<picture><source srcset="img/composition/song04.webp" type="image/webp"><img src="img/composition/song04.png" alt="song04"></picture>
+							</div>
+							<div class="item-composition__content">
+								<div class="item-composition__info">
+									<h4 class="item-composition__performer">Justin Bieber</h4>
+									<div class="item-composition__name">Love Yourself</div>
+									<div class="item-composition__by">
+										<p>by Sammy Silvas</p>
+										<div class="item-composition__links">
+											<a href="#" class="item-composition__link item-composition__link-youtube">
+												<img src="img/footer/youtube.svg" alt="yt">
+											</a>
+											<a href="#" class="item-composition__link item-composition__link-instagram">
+												<img src="img/footer/instagram.svg" alt="inst">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="item-composition__footer">
+									<a href="#" type="button" class="item-composition__btn btn">Play</a>
+									<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+										<img src="img/flowers/addcart.svg" alt="cart">
+									</button>
+								</div>
+							</div>
+
+						</div>
+						<div data-showmore class="composition__footer footer-section">
+							<div data-showmore-content="0" class="footer-section__content">
+								<div class="composition__catalog">
+									<div class="composition__item item-composition">
+										<div class="item-composition__image">
+											<picture><source srcset="img/composition/song01.webp" type="image/webp"><img src="img/composition/song01.png" alt="song01"></picture>
+										</div>
+										<div class="item-composition__content">
+											<div class="item-composition__info">
+												<h4 class="item-composition__performer">Frankie Valie</h4>
+												<div class="item-composition__name">Can’t Take My Eyes off You</div>
+												<div class="item-composition__by">
+													<p>by Sammy Silvas</p>
+													<div class="item-composition__links">
+														<a href="#" class="item-composition__link item-composition__link-youtube">
+															<img src="img/footer/youtube.svg" alt="yt">
+														</a>
+														<a href="#" class="item-composition__link item-composition__link-instagram">
+															<img src="img/footer/instagram.svg" alt="inst">
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="item-composition__footer">
+												<a href="#" type="button" class="item-composition__btn btn">Play</a>
+												<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+													<img src="img/flowers/addcart.svg" alt="cart">
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="composition__item item-composition">
+										<div class="item-composition__image">
+											<picture><source srcset="img/composition/song02.webp" type="image/webp"><img src="img/composition/song02.png" alt="song02"></picture>
+										</div>
+										<div class="item-composition__content">
+											<div class="item-composition__info">
+												<h4 class="item-composition__performer">Bruno Mars</h4>
+												<div class="item-composition__name">Just the Way You Are</div>
+												<div class="item-composition__by">
+													<p>by Sammy Silvas</p>
+													<div class="item-composition__links">
+														<a href="#" class="item-composition__link item-composition__link-youtube">
+															<img src="img/footer/youtube.svg" alt="yt">
+														</a>
+														<a href="#" class="item-composition__link item-composition__link-instagram">
+															<img src="img/footer/instagram.svg" alt="inst">
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="item-composition__footer">
+												<a href="#" type="button" class="item-composition__btn btn">Play</a>
+												<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+													<img src="img/flowers/addcart.svg" alt="cart">
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="composition__item item-composition">
+										<div class="item-composition__image">
+											<picture><source srcset="img/composition/song03.webp" type="image/webp"><img src="img/composition/song03.png" alt="song03"></picture>
+										</div>
+										<div class="item-composition__content">
+											<div class="item-composition__info">
+												<h4 class="item-composition__performer">Enrique Iglesias</h4>
+												<div class="item-composition__name">Bailando (Spanish Version)</div>
+												<div class="item-composition__by">
+													<p>by Sammy Silvas</p>
+													<div class="item-composition__links">
+														<a href="#" class="item-composition__link item-composition__link-youtube">
+															<img src="img/footer/youtube.svg" alt="yt">
+														</a>
+														<a href="#" class="item-composition__link item-composition__link-instagram">
+															<img src="img/footer/instagram.svg" alt="inst">
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="item-composition__footer">
+												<a href="#" type="button" class="item-composition__btn btn">Play</a>
+												<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+													<img src="img/flowers/addcart.svg" alt="cart">
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="composition__item item-composition">
+										<div class="item-composition__image">
+											<picture><source srcset="img/composition/song04.webp" type="image/webp"><img src="img/composition/song04.png" alt="song04"></picture>
+										</div>
+										<div class="item-composition__content">
+											<div class="item-composition__info">
+												<h4 class="item-composition__performer">Justin Bieber</h4>
+												<div class="item-composition__name">Love Yourself</div>
+												<div class="item-composition__by">
+													<p>by Sammy Silvas</p>
+													<div class="item-composition__links">
+														<a href="#" class="item-composition__link item-composition__link-youtube">
+															<img src="img/footer/youtube.svg" alt="yt">
+														</a>
+														<a href="#" class="item-composition__link item-composition__link-instagram">
+															<img src="img/footer/instagram.svg" alt="inst">
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="item-composition__footer">
+												<a href="#" type="button" class="item-composition__btn btn">Play</a>
+												<button type="button" id="addCompositionToCart" data-tippy-content="First add flowers to your cart" class="item-composition__cart">
+													<img src="img/flowers/addcart.svg" alt="cart">
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button hidden data-showmore-button type="button" class="footer-section__more footer-section__more-composition">
+								<span>More</span>
+								<span>Less</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<section class="services">
+				<div class="services__container">
+					<div class="services__header">
+						<h2 class="services__title subtitle">Additional Services</h2>
+					</div>
+					<div class="services__content">
+						<div class="services__item  item-services item-services-video" data-service-type="video">
+							<div class="item-services__image">
+								<picture><source srcset="img/services/videoshooting.webp" type="image/webp"><img src="img/services/videoshooting.png" alt="videoshooting"></picture>
+							</div>
+							<div class="item-services__name">
+								<p> Video Shooting</p>
+							</div>
+							<div class="item-services__buy">
+								<span class="item-services__price">$100</span>
+								<div class="item-services__button">
+									<button type="button" data-tippy-content="First add flowers to your cart" class="item-services__btn btn btn-medium">Add</button>
+								</div>
+							</div>
+						</div>
+						<div class="services__item  item-services item-services__media" data-service-type="media">
+							<div class="item-services__image">
+								<picture><source srcset="img/services/media.webp" type="image/webp"><img src="img/services/media.png" alt="media"></picture>
+							</div>
+							<div class="item-services__name">
+								<p>Publish on Social Media</p>
+								<!-- <p>(TikTok, YouTube, Instagram)</p> -->
+							</div>
+							<div class="item-services__buy">
+								<div class="item-services__price">$100</div>
+								<div class="item-services__button">
+									<button type="button" data-tippy-content="First add flowers to your cart" class="item-services__btn btn btn-medium">Add</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="data">
+				<div class="data__container">
+					<div class="data__main">
+						<div class="data__you you-data">
+							<h2 class="you-data__header subtitle">Your data</h2>
+							<div class="you-data__content">
+								<div class="you-data__firstname you-data__row">
+									<h4 class="you-data__title">First name:</h4>
+									<input type="text" class="you-data__input data-input">
+								</div>
+								<div class="you-data__lastname you-data__row">
+									<div class="you-data__title">
+										<h4 class="you-data__title">Last name:</h4>
+										<p>(not necessarily)</p>
+									</div>
+									<input type="text" class="you-data__input data-input">
+								</div>
+								<div class="you-data__sex you-data__row">
+									<h4 class="you-data__title">Sex:</h4>
+									<input type="text" class="you-data__input data-input">
+								</div>
+								<div class="you-data__number you-data__row">
+									<h4 class="you-data__title">Phone number:</h4>
+									<input type="tel" class="you-data__input data-input">
+								</div>
+								<div class="you-data__email you-data__row">
+									<h4 class="you-data__title">E-mail:</h4>
+									<input type="email" class="you-data__input data-input">
+								</div>
+								<div class="you-data__instagram you-data__row">
+									<h4 class="you-data__title">Instagram:</h4>
+									<input type="text" class="you-data__input data-input">
+								</div>
+							</div>
+						</div>
+						<div class="data__partner partner-data">
+							<h2 class="partner-data__header subtitle">Data partner</h2>
+							<div class="partner-data__information">
+								<div class="partner-data__content">
+									<div class="partner-data__firstname you-data__row">
+										<h4 class="partner-data__title">First name:</h4>
+										<input type="text" class="partner-data__input data-input">
+									</div>
+									<div class="partner-data__lastname you-data__row">
+										<div class="partner-data__title">
+											<h4 class="partner-data__title">Last name:</h4>
+											<p>(not necessarily)</p>
+										</div>
+										<input type="text" class="partner-data__input data-input">
+									</div>
+									<div class="partner-data__sex you-data__row">
+										<h4 class="partner-data__title">Sex:</h4>
+										<input type="text" class="partner-data__input data-input">
+									</div>
+									<div class="partner-data__number you-data__row">
+										<h4 class="partner-data__title">Phone number:</h4>
+										<input type="tel" class="partner-data__input data-input">
+									</div>
+									<div class="partner-data__email you-data__row">
+										<h4 class="partner-data__title">E-mail:</h4>
+										<input type="email" class="partner-data__input data-input">
+									</div>
+									<div class="partner-data__instagram you-data__row">
+										<h4 class="partner-data__title">Instagram:</h4>
+										<input type="text" class="partner-data__input data-input">
+									</div>
+								</div>
+								<div class="partner-data__upload">
+									<div class="partner-data__image">
+										<img src="" id="partner_partnerImg" alt="">
+									</div>
+									<label>
+										<input type="file" accept="image/*" id="partner_myImg" class="partner-data__input">
+										<span class="partner-data__input-image btn">Upload</span>
+									</label>
+									<div class="partner-data__upload-text">
+										We need picture of partner to prevent confusion
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="data__info info-data">
+						<h4 class="info-data__title">Who is your partner?</h4>
+						<select class="data__select select-data__select" name="form[]" data-class-modif="form">
+							<option class="select-data__option" value="1">Girlfriend</option>
+							<option class="select-data__option" value="2">Mother</option>
+							<option class="select-data__option" value="3">Sister</option>
+							<option class="select-data__option" value="4">Another</option>
+						</select>
+					</div>
+					<div class="data__additional additional-data">
+						<h4 class="additional-data__title">Additional information about partner</h4>
+						<textarea data-autoheight name="text" class="additional-data__text"></textarea>
+						<div class="additional-data__button">
+							<button type="submit" class="additional-data__btn btn ">Confirm</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="calendar">
+				<div class="calendar__container">
+					<div class="calendar__header">
+						<h2 class="calendar__title subtitle">Calendar</h2>
+					</div>
+					<div class="calendar__content">
+						<div class="calendar__selected selected-calendar">
+							<input class="selected-calendar__date" disabled data-datepicker type="text" name="">
+							<input class="selected-calendar__time" value="10:30" id="newYorkTimeInput" type="time">
+
+							<div class="selected-calendar__for">Musical romantic perfomance for <br>
+								<span class="data-partner-name">Anna</span>
+							</div>
+						</div>
+					</div>
+					<div class="calendar__footer">
+						<button type="submit" class="calendar__btn btn">Confirm</button>
+					</div>
+				</div>
+			</section>
+			<section class="place">
+				<div class="place__container">
+					<div class="place__header">
+						<h2 class="place__title subtitle">Place</h2>
+					</div>
+					<div class="place__content">
+						<div class="place__find">
+							<div class="place__input">
+								<div class="place__decor">
+									<img src="img/map/geo.svg" alt="decor">
+								</div>
+								<input class="place__search" id="autocompleteInput" type="text" placeholder="Enter a place...">
+								<button class="place__clear" id="autocompleteClear" type="button"><img src="img/map/x-mark.svg" alt="x-mark"></button>
+							</div>
+
+						</div>
+
+						<div class="place__map" id="map"></div>
+
+
+					</div>
+					<div class="place__footer">
+						<button type="submit" class="place__btn btn">Confirm</button>
+					</div>
+				</div>
+			</section>
+			<section class="informations">
+				<div class="informations__container">
+					<div class="informations__header">
+						<h2 class="informations__title subtitle">Additional Information</h2>
+					</div>
+					<form class="informations__content">
+						<!-- <div class="informations__services">
+                     <div class="informations__service service-info service-info-flower">
+                        <div class="service-info__item">
+                           <div class="service-info__img">
+                              <picture><source srcset="img/flowers/flower04.webp" type="image/webp"><img src="img/flowers/flower04.png" alt="04"></picture>
+                           </div>
+                           <div class="service-info__text">
+                              <h3 class="service-info__name">Rose</h3>
+                              <span class="service-info__price">$38.24</span>
+                           </div>
+                        </div>
+                        <form action="#" class="service-info__form">
+                           <textarea name="text" id="" class="service-info__input" placeholder="Text"></textarea>
+                           <button type="submit" class="service-info__btn btn btn-medium">Add</button>
+                        </form>
+                     </div>
+                     <div class="informations__service service-info service-info-song">
+                        <div class="service-info__item">
+                           <div class="service-info__img">
+                              <picture><source srcset="img/informations/song01.webp" type="image/webp"><img src="img/informations/song01.png" alt="01"></picture>
+                           </div>
+                           <div class="service-info__text">
+                              <h4 class="service-info__performer item-composition__performer">Enrique Iglesias</h4>
+                              <div class="service-info__name item-composition__name">Bailando (Spanish Version)</div>
+                              <div class="service-info__by item-composition__by">
+                                 <p>by Sammy Silvas</p>
+                                 <div class="item-composition__links">
+                                    <a href="#" class="item-composition__link item-composition__link-youtube">
+                                       <img src="img/footer/youtube.svg" alt="yt">
+                                    </a>
+                                    <a href="#" class="item-composition__link item-composition__link-instagram">
+                                       <img src="img/footer/instagram.svg" alt="inst">
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <form action="#" class="service-info__form">
+                           <textarea name="text" id="" class="service-info__input" placeholder="Text"></textarea>
+                           <button type="submit" class="service-info__btn btn btn-medium">Add</button>
+                        </form>
+                     </div>
+                     <div class="informations__service service-info service-info-video">
+                        <div class="service-info__item">
+                           <div class="service-info__img">
+                              <picture><source srcset="img/services/videoshooting.webp" type="image/webp"><img src="img/services/videoshooting.png" alt="videoshoot"></picture>
+                           </div>
+                           <div class="service-info__text">
+                              <h3 class="service-info__name">Video Shooting</h3>
+                              <span class="service-info__price">$150</span>
+                           </div>
+                        </div>
+                        <form action="#" class="service-info__form">
+                           <textarea name="text" id="" class="service-info__input" placeholder="Text"></textarea>
+                           <button type="submit" class="service-info__btn btn btn-medium">Add</button>
+                        </form>
+                     </div>
+                     <div class="informations__service service-info service-info-delivery">
+                        <div class="service-info__item">
+                           <div class="service-info__img">
+                              <picture><source srcset="img/informations/delivery.webp" type="image/webp"><img src="img/informations/delivery.png" alt="delivery"></picture>
+                           </div>
+                           <div class="service-info__text">
+                              <h3 class="service-info__name">Delivery to
+                                 New York 111111</h3>
+                              <span class="service-info__price">$100</span>
+                           </div>
+                        </div>
+                        <form action="#" class="service-info__form">
+                           <textarea name="text" id="" class="service-info__input" placeholder="Text"></textarea>
+                           <button type="submit" class="service-info__btn btn btn-medium">Add</button>
+                        </form>
+                     </div>
+                     <div class="informations__service service-info service-info-media">
+                        <div class="service-info__item">
+                           <div class="service-info__img">
+                              <picture><source srcset="img/services/media.webp" type="image/webp"><img src="img/services/media.png" alt="media"></picture>
+                           </div>
+                           <div class="service-info__text">
+                              <h3 class="service-info__name">Publish on
+                                 Social Media</h3>
+                              <span class="service-info__price">$100</span>
+                           </div>
+                        </div>
+                        <form action="#" class="service-info__form">
+                           <textarea name="text" id="" class="service-info__input" placeholder="Text"></textarea>
+                           <button type="submit" class="service-info__btn btn btn-medium">Add</button>
+                        </form>
+                     </div>
+                  </div> -->
+						<div class="informations__comment form-comment">
+							<div class="form-comment__block" id="commentFlowers">
+								<label for="texteareaFlowers">Comment for the florist</label>
+								<textarea id="texteareaFlowers" class="form-comment__textearea form-comment__textearea-florist" placeholder="Write additional information about flowers"></textarea>
+							</div>
+							<div class="form-comment__block" id="commentComposition">
+								<label for="texteareaComposition">Comment for the performer</label>
+								<textarea id="texteareaComposition" name="form-comment__composition" class="form-comment__textearea form-comment__textearea-composition" placeholder="Write additional information about composition"></textarea>
+							</div>
+							<div class="form-comment__block" id="commentServices">
+								<label for="texteareaServices">Comment for services</label>
+								<textarea id="texteareaServices" name="form-comment__services" class="form-comment__textearea form-comment__textearea-services" placeholder="Write additional information about services"></textarea>
+							</div>
+							<div class="form-comment__block" id="commentDelivery">
+								<label for="texteareaDelivery">Comment for delivery</label>
+								<textarea id="texteareaDelivery" name="form-comment__delivery" class="form-comment__textearea form-comment__textearea-delivery" placeholder="Write additional information about delivery"></textarea>
+							</div>
+							<div class="form-comment__block form-comment__block-info" id="commentInfo">
+								<label for="texteareaInfo">Order notes <span>(max 600 characters)</span>
+								</label>
+								<textarea id="texteareaInfo" name="form-comment__info" class="form-comment__textearea form-comment__textearea-info" placeholder="Notes about your order, e.g. special notes for delivery." maxlength="600"></textarea>
+							</div>
+						</div>
+						<div class="informations__footer">
+							<div class="informations__total">Total: <span id="fullSum"></span></div>
+							<div class="informations__info">
+								<div class="informations__terms">
+									<button type="button" id="buttonReadTerms" class="informations__term_btn">
+										<img class="informations__term_img" src="img/informations/done.svg" alt="done">
+									</button>
+									<a href="terms.html" id="goBackTerms" class="informations__term">I agree with
+										Terms
+										&
+										Conditions</a>
+								</div>
+								<div class="informations__button">
+									<button type="submit" class="informations__btn btn ">Confirm</button>
+								</div>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</section>
+			<section class="payment">
+				<div class="payment__container">
+					<div class="payment__header">
+						<h2 class="payment__title  subtitle">Payment</h2>
+					</div>
+					<div class="payment__content">
+						<form action="" class="payment__form">
+							<input class="payment__input payment__name" type="text" placeholder="Name on card" required>
+							<div class="payment__card">
+								<input class=" payment__input payment__number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="Card number" required>
+								<input class=" payment__input payment__date" type="tel" inputmode="numeric" maxlength="4" placeholder="MM/YY">
+								<input class=" payment__input payment__cvc" type="tel" inputmode="numeric" maxlength="3" placeholder="CVC">
+							</div>
+							<input class="payment__input payment__email" type="email" placeholder="Email" required>
+
+						</form>
+						<button class="payment__cart" id="paymentCart">Check Cart</button>
+						<button class="payment__button button" type="submit">Pay <span id="fullSumMain"></span> </button>
+					</div>
+				</div>
+			</section>
+			<button data-goto=".wrapper" data-tippy-content-2="scroll to top" id="scrollToTop" class="scroll">
+				<img src="img/header/arrow-top.svg" alt="top">
+			</button>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__text">Lovvely © 2024</div>
+				<div class="footer__contacts contacts-footer">
+					<h3 class="contacts-footer__title">Contact us</h3>
+					<a href="mailto:lovvely@sachok.net" class="contacts-footer__mail">lovvely@sachok.net</a>
+					<div class="contacts-footer__links">
+						<a href="tel:777-777-77-77" class="contacts-footer__phone">777-777-77-77</a>
+						<div class="contacts-footer__social">
+							<a href="" class="contacts-footer__whatsapp">
+								<img src="img/footer/whatsapp.svg" alt="whatsapp">
+							</a>
+							<a href="" class="contacts-footer__telegram">
+								<img src="img/footer/telegram.svg" alt="tg">
+							</a>
+							<a href="" class="contacts-footer__message">
+								<img src="img/footer/message.svg" alt="message">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__follow follow-footer">
+					<h3 class="follow-footer__title">Follow us</h3>
+					<div class="follow-footer__links follow-links">
+						<a href="#" class="follow-links__tt">
+							<img src="img/footer/tiktok.svg" alt="tt">
+						</a>
+						<a href="#" class="follow-links__inst">
+							<img src="img/footer/instagram.svg" alt="inst">
+						</a>
+						<a href="#" class="follow-links__youtube">
+							<img src="img/footer/youtube.svg" alt="yt">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"><img src="img/popup/x-mark.svg" alt="x-mark"></button>
+				<div class="popup__info">
+					<div class="popup__none">
+						<a href="#" data-close data-goto-header data-goto=".flowers" id="scrollToAdd">add item to cart :)</a>
+					</div>
+					<!-- <div class="popup__item item-cart item-cart_flower">
+               <div class="item-cart__img">
+                  <picture><source srcset="img/flowers/flower03.webp" type="image/webp"><img src="img/flowers/flower03.png" alt="03"></picture>
+               </div>
+               <div class="item-cart__header">
+                  <h3 class="item-cart__title">One doze</h3>
+                  <p class="item-cart__subtitle" id="itemCartPrice">$34.99</p>
+                  <span id="itemCartQuantity">1x ${flowerPrice.toFixed(2)} = $${flowerPrice.toFixed(2)}</span>
+                  <div class="item-cart__quantity-controls">
+                     <button class="quantity-control" id="decreaseQuantity">-</button>
+                     <button class="quantity-control" id="increaseQuantity">+</button>
+                  </div>
+               </div>
+               <button class="item-cart__delete">X</button>
+            </div> -->
+					<!-- <div class="popup__item item-cart item-cart_composition">
+               <div class="item-cart__img">
+                  <picture><source srcset="img/composition/song01.webp" type="image/webp"><img src="img/composition/song01.png" alt="01"></picture>
+               </div>
+               <div class="item-cart__header">
+                  <h3 class="item-cart__title">Frankie Valie</h3>
+                  <p class="item-cart__subtitle">Can’t Take My Eyes off You</p>
+               </div>
+               <button class="item-cart__delete" id="itemCartDelete">X</button>
+            </div> -->
+					<!-- <div class="popup__item item-cart item-cart_services">
+               <div class="item-cart__img">
+                  <picture><source srcset="img/services/videoshooting.webp" type="image/webp"><img src="img/services/videoshooting.png" alt="01"></picture>
+               </div>
+               <div class="item-cart__header">
+                  <h3 class="item-cart__title">Video Shooting</h3>
+                  <p class="item-cart__subtitle">$150</p>
+               </div>
+               <button class="item-cart__delete" id="itemCartDelete">X</button>
+            </div> -->
+
+
+
+					<div class="popup__delivery delivery-popup">
+						<div class="delivery-popup__image">
+							<img src="img/popup/delivery.svg" alt="delivery">
+						</div>
+						<div class="delivery-popup__info">
+							<a href="#" data-goto-header data-goto=".place" data-close class="delivery-popup__title">Delivery to
+								New York</a>
+							<span class="delivery-popup__title" id="deliveryPrice">$100</span>
+						</div>
+					</div>
+				</div>
+				<div class="popup__footer">
+					<div class="popup__total">Total: <span id="itemCartSum"></span></div>
+
+					<a href="#" data-goto-header data-close data-goto=".payment" class="popup__payment btn">Proceed to
+						checkout</a></li>
+					<button class="popup__clear btn" id="popupClearCart">Clear cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity .5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+		<!-- Стилі для прелоадера -->
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			html {
+				overflow: hidden;
+				touch-action: none;
+				overscroll-behavior: none;
+			}
+
+			/* Головний блок */
+			.fls-preloader {
+				pointer-events: none;
+				z-index: -1;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+			}
+
+			/* Блок з елементами */
+			.fls-preloader__body {
+				display: flex;
+				position: relative;
+				left: 50%;
+				top: 50%;
+				width: 150px;
+				height: 150px;
+				margin: -75px 0 0 -75px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #FF58B5;
+				-webkit-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
+			}
+
+			.fls-preloader__body:before {
+				content: "";
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #780A52;
+				-webkit-animation: spin 3s linear infinite;
+				animation: spin 3s linear infinite;
+			}
+
+			.fls-preloader__body:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #FF58B5;
+				-webkit-animation: spin 1.5s linear infinite;
+				animation: spin 1.5s linear infinite;
+			}
+
+			/* Блок з лічильником */
+			.fls-preloader__counter {}
+
+			/* Прогресбар */
+			.fls-preloader__line {}
+
+			/* Лінія прогресбару */
+			.fls-preloader__line span {}
+
+			@-webkit-keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							
+						</div>
+					</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						showLineLoad = document.querySelector('.fls-preloader__line span'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
+	<script>
+		(g => {
+			var h, a, k, p = "The Google Maps JavaScript API",
+				c = "google",
+				l = "importLibrary",
+				q = "__ib__",
+				m = document,
+				b = window;
+			b = b[c] || (b[c] = {});
+			var d = b.maps || (b.maps = {}),
+				r = new Set,
+				e = new URLSearchParams,
+				u = () => h || (h = new Promise(async (f, n) => {
+					await (a = m.createElement("script"));
+					e.set("libraries", [...r, 'places'] + ""); // Додаємо 'places' до списку бібліотек
+					for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+					e.set("callback", c + ".maps." + q);
+					a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+					d[q] = f;
+					a.onerror = () => h = n(Error(p + " could not load."));
+					a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+					m.head.append(a)
+				}));
+			d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+		})({
+			key: "AIzaSyAzcahL_hdBtv-iRcklwGiOiaMnyVhdCOY",
+			// Add other bootstrap parameters as needed, using camel case.
+			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+		});
+	</script>
+	<script src="js/app.min.js?_v=20240418013759"></script>
+
+</body>
+
+</html>
