@@ -1546,8 +1546,13 @@
                 overlayPlaceholder: "Рік (4 цифри)",
                 startDay: 1,
                 formatter: (input, date, instance) => {
-                    const value = date.toLocaleDateString();
-                    input.value = value;
+                    const options = {
+                        weekday: "long",
+                        month: "long",
+                        day: "numeric"
+                    };
+                    const formattedDate = date.toLocaleDateString("en-US", options);
+                    input.value = formattedDate;
                 },
                 dateSelected: new Date(2024, 6, 24),
                 dateFormat: "dd MM yy",
@@ -7548,32 +7553,10 @@
             };
             fileReader.readAsDataURL(target.files[0]);
         };
-        function saveScrollPosition(elementId) {
-            const element = document.getElementById(elementId);
-            if (element) element.addEventListener("click", (function() {
-                localStorage.setItem(elementId + "_scrollPosition", window.scrollY);
-            }));
-        }
-        function restoreScrollPosition(elementId) {
-            const element = document.getElementById(elementId);
-            if (element) document.addEventListener("DOMContentLoaded", (function() {
-                const scrollPosition = localStorage.getItem(elementId + "_scrollPosition");
-                if (scrollPosition) {
-                    window.scrollTo(0, scrollPosition);
-                    localStorage.removeItem(elementId + "_scrollPosition");
-                }
-            }));
-        }
-        saveScrollPosition("goBackFlowers");
-        saveScrollPosition("goBackCompositions");
-        saveScrollPosition("goBackTerms");
-        restoreScrollPosition("goBackFlowers");
-        restoreScrollPosition("goBackCompositions");
-        restoreScrollPosition("goBackTerms");
         const buttonReadTerms = document.getElementById("buttonReadTerms");
         const confirmButton = document.querySelector(".informations__btn");
         let isChecked = false;
-        buttonReadTerms.addEventListener("click", (function() {
+        if (buttonReadTerms) buttonReadTerms.addEventListener("click", (function() {
             const buttonImg = document.querySelector(".informations__term_img");
             isChecked = !isChecked;
             if (isChecked) {
@@ -7586,13 +7569,13 @@
                 confirmButton.style.pointerEvents = "none";
             }
         }));
-        confirmButton.addEventListener("click", (function() {
+        if (confirmButton) confirmButton.addEventListener("click", (function() {
             if (!isChecked) ;
         }));
         document.addEventListener("DOMContentLoaded", (function() {
             var searchForm = document.getElementById("searchForm");
             var isSearchPerformed = false;
-            searchForm.addEventListener("submit", (function(event) {
+            if (searchForm) searchForm.addEventListener("submit", (function(event) {
                 event.preventDefault();
                 var searchText = document.getElementById("searchInput").value.toLowerCase();
                 var items = document.querySelectorAll(".item-flower");
@@ -7624,7 +7607,7 @@
         document.addEventListener("DOMContentLoaded", (function() {
             var searchForm = document.getElementById("compositionForm");
             var isSearchPerformed = false;
-            searchForm.addEventListener("submit", (function(event) {
+            if (searchForm) searchForm.addEventListener("submit", (function(event) {
                 event.preventDefault();
                 var searchText = document.getElementById("compositionInput").value.toLowerCase();
                 var items = document.querySelectorAll(".item-composition");
@@ -7686,6 +7669,7 @@
             var popupNone = document.querySelector(".popup__none");
             var popupDelivery = document.querySelector(".popup__delivery");
             var popupPayment = document.querySelector(".popup__payment");
+            if (!itemsInCart || !popupNone || !popupDelivery || !popupPayment) return;
             if (itemsInCart.length > 0) {
                 popupNone.style.display = "none";
                 popupDelivery.style.display = "flex";
@@ -7712,7 +7696,7 @@
             popup.classList.remove("popup_show");
         }));
         var closeButton = document.querySelector(".popup__close");
-        closeButton.addEventListener("click", (function() {
+        if (closeButton) closeButton.addEventListener("click", (function() {
             popup.setAttribute("aria-hidden", "true");
             document.documentElement.classList.remove("popup-show");
             document.documentElement.classList.remove("lock");
@@ -7766,7 +7750,7 @@
         }
         addQuantityButtonListeners();
         var clearCartButton = document.getElementById("popupClearCart");
-        clearCartButton.addEventListener("click", (function() {
+        if (clearCartButton) clearCartButton.addEventListener("click", (function() {
             var cartItems = document.querySelectorAll(".popup__item");
             cartItems.forEach((function(cartItem) {
                 cartItem.remove();
