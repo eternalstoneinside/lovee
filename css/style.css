@@ -796,6 +796,10 @@ body::after {
           transform: scale(0.6);
 }
 
+.popup__tax {
+  margin-top: -5px;
+}
+
 .popup__none {
   text-align: center;
   display: none;
@@ -2327,6 +2331,10 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 0.625rem;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .informations__terms button {
@@ -2348,6 +2356,7 @@ img {
 .informations__terms button img {
   width: 30px;
   height: 25px;
+  display: none;
 }
 
 .informations__term_link {
@@ -3036,6 +3045,33 @@ img {
 
 .payment {
   border-bottom: 1px solid #810058;
+  position: relative;
+}
+
+.payment__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .payment__title {
@@ -3594,6 +3630,10 @@ img {
 }
 
 @media (min-width: 79.375em) {
+  .popup__tax {
+    font-size: 0.75rem;
+  }
+
   .popup__info {
     gap: 1.875rem;
   }
@@ -4227,9 +4267,20 @@ img {
     right: 0;
     padding: 30px 0;
   }
+
+  .informations__terms {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media (max-width: 20em) {
+  .popup__tax {
+    font-size: 0.625rem;
+  }
+
   .popup__info {
     gap: 1.25rem;
   }
@@ -5045,6 +5096,20 @@ img {
   }
 }
 
+@media (max-width: 21.875em) {
+  .contacts-footer__phone {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .contacts-footer__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media (max-width: 20.625em) {
   .popup__content {
     width: 18.75rem;
@@ -5052,6 +5117,18 @@ img {
 }
 
 @media (min-width: 20em) and (max-width: 79.375em) {
+@supports (font-size: clamp( 0.625rem , 0.5828947368rem  +  0.2105263158vw , 0.75rem )) {
+    .popup__tax {
+      font-size: clamp( 0.625rem , 0.5828947368rem  +  0.2105263158vw , 0.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.625rem , 0.5828947368rem  +  0.2105263158vw , 0.75rem )) {
+    .popup__tax {
+      font-size: calc(0.625rem + 0.125 * (100vw - 20rem) / 59.375);
+    }
+}
+
 @supports (gap: clamp( 1.25rem , 1.0394736842rem  +  1.0526315789vw , 1.875rem )) {
     .popup__info {
       gap: clamp( 1.25rem , 1.0394736842rem  +  1.0526315789vw , 1.875rem );

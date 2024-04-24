@@ -7558,19 +7558,34 @@
         let isChecked = false;
         if (buttonReadTerms) buttonReadTerms.addEventListener("click", (function() {
             const buttonImg = document.querySelector(".informations__term_img");
+            let paymentBlock = document.querySelector(".payment__block");
             isChecked = !isChecked;
             if (isChecked) {
                 buttonImg.style.display = "block";
                 confirmButton.style.backgroundColor = "#FF58B5";
                 confirmButton.style.pointerEvents = "auto";
+                paymentBlock.style.opacity = "0";
+                setTimeout((function() {
+                    paymentBlock.style.display = "none";
+                }), 400);
             } else {
                 buttonImg.style.display = "none";
                 confirmButton.style.backgroundColor = "grey";
                 confirmButton.style.pointerEvents = "none";
+                setTimeout((function() {
+                    paymentBlock.style.opacity = "1";
+                }), 10);
+                paymentBlock.style.display = "flex";
             }
         }));
         if (confirmButton) confirmButton.addEventListener("click", (function() {
             if (!isChecked) ;
+        }));
+        const paymentLink = document.getElementById("paymentLink");
+        const informationsTerms = document.querySelector(".informations__terms");
+        if (paymentLink) paymentLink.addEventListener("click", (function() {
+            const windowWidth = window.innerWidth;
+            if (windowWidth >= 910) informationsTerms.style.transform = "scale(1.2) translateX(-15px)"; else informationsTerms.style.transform = "scale(1.1)";
         }));
         document.addEventListener("DOMContentLoaded", (function() {
             var searchForm = document.getElementById("searchForm");
@@ -7638,31 +7653,53 @@
         }));
         function updateTotalSum() {
             var itemPrices = document.querySelectorAll(".item-cart__subtitle");
+            var totalSumWithoutDelivery = 0;
             var totalSum = 0;
-            itemPrices.forEach((function(itemPrice) {
-                var priceText = itemPrice.textContent.trim();
-                var priceValue = parseFloat(priceText.replace("$", ""));
-                if (!isNaN(priceValue)) {
-                    var isService = itemPrice.closest(".item-cart").classList.contains("item-cart_service");
-                    if (isService) totalSum += priceValue; else {
-                        var quantityElement = itemPrice.parentNode.querySelector("#itemCartQuantity");
-                        if (quantityElement) {
-                            var quantityText = quantityElement.textContent.trim();
-                            var quantity = parseInt(quantityText.substring(0, quantityText.indexOf("x")));
-                            totalSum += quantity * priceValue;
+            if (itemPrices.length > 0) {
+                itemPrices.forEach((function(itemPrice) {
+                    var priceText = itemPrice.textContent.trim();
+                    var priceValue = parseFloat(priceText.replace("$", ""));
+                    if (!isNaN(priceValue)) {
+                        var isService = itemPrice.closest(".item-cart").classList.contains("item-cart_service");
+                        if (isService) totalSumWithoutDelivery += priceValue; else {
+                            var quantityElement = itemPrice.parentNode.querySelector("#itemCartQuantity");
+                            if (quantityElement) {
+                                var quantityText = quantityElement.textContent.trim();
+                                var quantity = parseInt(quantityText.substring(0, quantityText.indexOf("x")));
+                                totalSumWithoutDelivery += quantity * priceValue;
+                            }
                         }
                     }
-                }
-            }));
-            if (totalSum > 0) totalSum += 100;
-            var totalSumElement = document.getElementById("itemCartSum");
-            totalSumElement.textContent = "$" + totalSum.toFixed(2);
-            var totalQuantity = document.querySelectorAll(".item-cart").length;
-            document.querySelector(".header__quantity").textContent = "+" + totalQuantity;
-            var fullSumMain = document.getElementById("fullSumMain");
-            fullSumMain.textContent = "$" + totalSum.toFixed(2);
-            var fullSum = document.getElementById("fullSum");
-            fullSum.textContent = fullSumMain.textContent;
+                }));
+                var taxPriceElement = document.getElementById("taxPrice");
+                var taxPriceText = taxPriceElement.textContent.trim();
+                var taxRate = parseFloat(taxPriceText.replace("%", "")) / 100;
+                var tax = totalSumWithoutDelivery * taxRate;
+                totalSum = totalSumWithoutDelivery + tax;
+                var deliveryPriceElement = document.getElementById("deliveryPrice");
+                var deliveryPriceText = deliveryPriceElement.textContent.trim();
+                var deliveryPriceValue = parseFloat(deliveryPriceText.replace("$", ""));
+                if (totalSum > 0) totalSum += deliveryPriceValue;
+                var totalSumElement = document.getElementById("itemCartSum");
+                totalSumElement.textContent = "$" + totalSum.toFixed(2);
+                var totalQuantity = document.querySelectorAll(".item-cart").length;
+                var headerQuantityElement = document.querySelector(".header__quantity");
+                if (headerQuantityElement) headerQuantityElement.textContent = "+" + (totalQuantity > 0 ? totalQuantity : 0);
+                var fullSumMain = document.getElementById("fullSumMain");
+                fullSumMain.textContent = "$" + totalSum.toFixed(2);
+                var fullSum = document.getElementById("fullSum");
+                fullSum.textContent = fullSumMain.textContent;
+            } else {
+                var headerQuantity = document.querySelector(".header__quantity");
+                if (headerQuantity) headerQuantity.textContent = "+0";
+                totalSum = 0;
+                totalSumElement = document.getElementById("itemCartSum");
+                if (totalSumElement) totalSumElement.textContent = "$" + totalSum.toFixed(2);
+                fullSumMain = document.getElementById("fullSumMain");
+                if (fullSumMain) fullSumMain.textContent = "$" + totalSum.toFixed(2);
+                fullSum = document.getElementById("fullSum");
+                if (fullSum) fullSum.textContent = fullSumMain.textContent;
+            }
         }
         function updatePopupNoneVisibility() {
             var itemsInCart = document.querySelectorAll(".popup__item");
@@ -7689,7 +7726,7 @@
             }));
         }
         var scrollToAdd = document.getElementById("scrollToAdd");
-        scrollToAdd.addEventListener("click", (function() {
+        if (scrollToAdd) scrollToAdd.addEventListener("click", (function() {
             popup.setAttribute("aria-hidden", "true");
             document.documentElement.classList.remove("popup-show");
             document.documentElement.classList.remove("lock");
@@ -7755,8 +7792,8 @@
             cartItems.forEach((function(cartItem) {
                 cartItem.remove();
             }));
-            updateTotalSum();
             updatePopupNoneVisibility();
+            updateTotalSum();
         }));
         function addFlowerToCart(item) {
             var flowerName = item.querySelector(".item-flower__title").textContent;
@@ -7802,7 +7839,7 @@
         updateTotalSum();
         addQuantityButtonListeners();
         const paymentCart = document.getElementById("paymentCart");
-        paymentCart.addEventListener("click", (function() {
+        if (paymentCart) paymentCart.addEventListener("click", (function() {
             popup.setAttribute("aria-hidden", "false");
             document.documentElement.classList.add("popup-show");
             popup.classList.add("popup_show");
@@ -7866,7 +7903,7 @@
             updateTotalSum();
             updatePopupNoneVisibility();
         }
-        popup.addEventListener("click", (function(event) {
+        if (typeof popup !== "undefined" && popup !== null) popup.addEventListener("click", (function(event) {
             if (event.target.classList.contains("item-cart__delete")) {
                 var item = event.target.closest(".popup__item");
                 if (item) {
@@ -7892,7 +7929,7 @@
         addQuantityButtonListeners();
         const videoServiceBtn = document.querySelector(".item-services-video .item-services__btn");
         const mediaServiceBtn = document.querySelector(".item-services__media .item-services__btn");
-        videoServiceBtn.addEventListener("click", (function() {
+        if (videoServiceBtn) videoServiceBtn.addEventListener("click", (function() {
             if (hasFlowersInCart()) {
                 const existingTippy = videoServiceBtn._tippy;
                 if (existingTippy) existingTippy.destroy();
@@ -7937,7 +7974,7 @@
                 }
             }
         }));
-        mediaServiceBtn.addEventListener("click", (function() {
+        if (mediaServiceBtn) mediaServiceBtn.addEventListener("click", (function() {
             if (hasFlowersInCart()) {
                 const existingTippy = mediaServiceBtn._tippy;
                 if (existingTippy) existingTippy.destroy();
@@ -7985,7 +8022,8 @@
             updateTotalSum();
             updatePopupNoneVisibility();
         }
-        popup.addEventListener("click", (function(event) {
+        var popup = document.getElementById("popup");
+        if (popup) popup.addEventListener("click", (function(event) {
             if (event.target.classList.contains("item-cart__delete")) {
                 var item = event.target.closest(".popup__item");
                 if (item) {
@@ -8027,12 +8065,12 @@
         document.addEventListener("DOMContentLoaded", (function() {
             var clearButton = document.getElementById("autocompleteClear");
             var autocompleteInput = document.getElementById("autocompleteInput");
-            clearButton.addEventListener("click", (function() {
+            if (clearButton) clearButton.addEventListener("click", (function() {
                 autocompleteInput.value = "";
             }));
         }));
         var confirmButton2 = document.querySelector(".place__btn");
-        confirmButton2.addEventListener("click", (function() {
+        if (confirmButton2) confirmButton2.addEventListener("click", (function() {
             var address = document.getElementById("autocompleteInput").value;
             console.log("Ви вибрали адресу: " + address);
         }));
@@ -8093,7 +8131,7 @@
                 });
             }));
         }
-        initMap();
+        if (document.getElementById("map") !== null) initMap(); else console.log("Map element not found. initMap() not called.");
         window["FLS"] = true;
         isWebp();
         menuInit();

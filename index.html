@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240418224136">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240424224039">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -649,7 +649,7 @@
 					<div class="informations__header">
 						<h2 class="informations__title subtitle">Additional Information</h2>
 					</div>
-					<form class="informations__content">
+					<form action="#" class="informations__content">
 						<div class="informations__comment form-comment">
 							<div class="form-comment__block form-comment__block-info" id="commentInfo">
 								<label for="texteareaInfo">Order notes <span>(max 600 characters)</span>
@@ -678,6 +678,11 @@
 				</div>
 			</section>
 			<section class="payment">
+				<div class="payment__block">
+					<a href="#" id="paymentLink" data-goto-top="100" data-goto=".informations">Please read and agree to the
+						Terms &
+						Conditions</a>
+				</div>
 				<div class="payment__container">
 					<div class="payment__header">
 						<h2 class="payment__title  subtitle">Payment</h2>
@@ -766,7 +771,7 @@
 				</div>
 				<div class="popup__footer">
 					<div class="popup__total">Total: <span id="itemCartSum"></span></div>
-
+					<div class="popup__tax">+ tax <span id="taxPrice">8.85%</span> of the amount of selected goods</div>
 					<a href="#" data-goto-header data-close data-goto=".payment" class="popup__payment btn">Proceed to
 						checkout</a></li>
 					<button class="popup__clear btn" id="popupClearCart">Clear cart</button>
@@ -1049,7 +1054,7 @@
 			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
 		});
 	</script>
-	<script src="js/app.min.js?_v=20240418224136"></script>
+	<script src="js/app.min.js?_v=20240424224039"></script>
 
 </body>
 
