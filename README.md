@@ -1,99 +1,48 @@
-# Lovee - Romantic Flower Delivery Landing
+# Lovee
 
-A stylish multi-section landing page for flower delivery and romantic event booking.
+A romantic flower-delivery and event-booking experience with a complete multi-step order flow.
 
-## Live Demo
-
-- https://eternalstoneinside.github.io/lovee/
-
-## Repository
-
-- https://github.com/eternalstoneinside/lovee
+[Live demo](https://eternalstoneinside.github.io/lovee/)
 
 ## Overview
 
-Lovee is a front-end project focused on emotional branding and conversion-oriented flow. It combines flower catalog browsing, composition picks, service add-ons, partner data form steps, calendar selection, and payment summary screens.
+Lovee combines emotional visual storytelling with a catalog and checkout journey. The project includes flowers and compositions, add-on services, recipient information, delivery planning, terms, confirmation, and alternative empty states.
 
-## Features
+## Highlights
 
-- Hero section with visual slider
-- Flower catalog and composition sections
-- Additional service blocks
-- Multi-step user and partner data forms
-- Calendar and place selection screens
-- Order notes and payment step
-- Responsive layout and custom UI assets
+- Hero image slider and responsive navigation
+- Flower and composition catalogs
+- Add-on event and media services
+- Multi-step customer and recipient forms
+- Date, place, notes, and payment screens
+- Optimized WebP assets with image fallbacks
 
-## Tech Stack
+## Tech stack
 
-- HTML
-- CSS
-- JavaScript (Vanilla)
+HTML5 · CSS3 · JavaScript
 
-## Run Locally
-
-1. Clone repository:
+## Run locally
 
 ```bash
 git clone https://github.com/eternalstoneinside/lovee.git
 cd lovee
-```
-
-2. Start a local server:
-
-```bash
-# Python 3
 python -m http.server 8000
 ```
 
-3. Open:
+Open [http://localhost:8000](http://localhost:8000).
 
-- http://localhost:8000
-
-## Project Structure
+## Project structure
 
 ```text
-lovee/
-|- index.html
-|- notFlowers.html
-|- notCompositions.html
-|- thanks.html
-|- terms.html
-|- css/
-|- js/
-|- img/
-|- fonts/
-`- favicon.ico
+index.html              Main storefront and order flow
+notFlowers.html         Empty flower state
+notCompositions.html    Empty composition state
+terms.html              Terms page
+thanks.html             Confirmation page
+css/ and js/            Styles and interactions
+img/                    Catalog and interface assets
 ```
-
-## Screenshots
-
-Place screenshots in your repository, for example:
-
-- img/preview-home.png
-- img/preview-catalog.png
-- img/preview-checkout.png
-
-Then reference them:
-
-```md
-![Lovee Home](img/preview-home.png)
-![Lovee Catalog](img/preview-catalog.png)
-![Lovee Checkout](img/preview-checkout.png)
-```
-
-## Roadmap
-
-- Improve semantics and accessibility labels
-- Add keyboard-only navigation for key interactions
-- Optimize images and lazy loading strategy
-- Add simple analytics events for conversion funnel
 
 ## Author
 
-- Dmytro Orlenko
-- GitHub: https://github.com/eternalstoneinside
-
-## License
-
-If needed, add an MIT license file.
+Designed and developed by [Dmytro Orlenko](https://github.com/eternalstoneinside).
